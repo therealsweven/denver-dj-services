@@ -54,7 +54,7 @@ const typeDefs = gql`
       email: String!
       phone: String
       message: String!
-      date: String
+      dateOfEvent: String
       package: String
       commMethod: String
       responded: Boolean

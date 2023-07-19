@@ -10,7 +10,6 @@ const inquirySchema = new Schema(
     email: {
       type: String,
       required: true,
-      unique: true,
       match: [/.+@.+\..+/, "Must match an email address!"],
     },
     phone: {
@@ -19,7 +18,7 @@ const inquirySchema = new Schema(
     message: {
       type: String,
     },
-    date: {
+    dateOfEvent: {
       type: String,
     },
     package: {

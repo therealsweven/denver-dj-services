@@ -9,6 +9,7 @@ import { setContext } from "@apollo/client/link/context";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // import Auth from "./utils/auth";
+import "./App.css";
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
 import Services from "./components/Services";
@@ -46,8 +47,8 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
+        <html data-theme="mytheme"></html>
         <NavBar />
-        <p>hello</p>
         <div>
           <Routes>
             <Route path="/" element={<Home />} />
