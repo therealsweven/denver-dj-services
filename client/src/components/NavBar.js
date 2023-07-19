@@ -61,7 +61,7 @@ export default function NavBar() {
         </ul>
       </div>
       <div className="navbar-end">
-        <a className="btn">Client Login</a>
+        <button className="btn">Client Login</button>
       </div>
     </div>
   );

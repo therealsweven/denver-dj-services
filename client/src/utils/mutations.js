@@ -1,5 +1,4 @@
 import { gql } from "@apollo/client";
-export { CREATE_INQUIRY };
 
 const CREATE_INQUIRY = gql`
   mutation Mutation(
@@ -37,3 +36,5 @@ const CREATE_INQUIRY = gql`
     }
   }
 `;
+
+export { CREATE_INQUIRY };

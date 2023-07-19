@@ -4,6 +4,7 @@ import receptionPic from "./images/wedding-reception-card.jpg";
 import bundlePic from "./images/wedding-bundle-card.jpg";
 import schoolCorpPic from "./images/school-dance-card.jpg";
 import "./css/services.css";
+import InquiryForm from "./forms/InquiryForm";
 
 export default function Services() {
   return (
@@ -38,7 +39,7 @@ export default function Services() {
                   and ceremony walkdown songs.
                 </p>
                 <div className="card-actions justify-center">
-                  <button className="btn btn-primary">Inquire</button>
+                  <InquiryForm />
                 </div>
               </div>
             </div>
@@ -60,7 +61,7 @@ export default function Services() {
                   soundtrack for your special day.
                 </p>
                 <div className="card-actions justify-center">
-                  <button className="btn btn-primary">Inquire</button>
+                  <InquiryForm />
                 </div>
               </div>
             </div>
@@ -89,7 +90,7 @@ export default function Services() {
                   soundtrack for your special day.
                 </p>
                 <div className="card-actions justify-center">
-                  <button className="btn btn-primary">Inquire</button>
+                  <InquiryForm />
                 </div>
               </div>
             </div>
@@ -109,7 +110,7 @@ export default function Services() {
                   space with hundreds of people. Lighting options available.
                 </p>
                 <div className="card-actions justify-center">
-                  <button className="btn btn-primary">Inquire</button>
+                  <InquiryForm />
                 </div>
               </div>
             </div>

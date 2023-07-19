@@ -13,6 +13,7 @@ export default function ContactForm({ setIsEditing }) {
     phone: "",
     dateOfEvent: "",
     message: "",
+    package: "",
   };
 
   const validationSchema = Yup.object().shape({
@@ -34,6 +35,7 @@ export default function ContactForm({ setIsEditing }) {
           dateOfEvent: values.dateOfEvent,
           message: values.message,
           commMethod: values.commMethod,
+          package: "contact page",
         },
       });
       resetForm();
