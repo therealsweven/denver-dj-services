@@ -28,7 +28,7 @@ export default function Services() {
               <figure>
                 <img src={cermonyPic} alt="Wedding Ceremony" />
               </figure>
-              <div className="card-body text-center items-center">
+              <div className="card-body text-center items-center bg-secondary">
                 <h2 className="card-title text-center">
                   Wedding Ceremony Package
                 </h2>
@@ -43,7 +43,7 @@ export default function Services() {
                 </div>
               </div>
             </div>
-            <div className="card card-compact w-96 bg-base-100 shadow-xl m-2">
+            <div className="card card-compact w-96 bg-base-100 shadow-xl m-2  bg-secondary">
               <figure>
                 <img src={receptionPic} alt="Wedding Reception" />
               </figure>
@@ -70,7 +70,7 @@ export default function Services() {
             id="packageCardsBottom"
             className="flex flex-wrap justify-center"
           >
-            <div className="card card-compact w-96 bg-base-100 shadow-xl m-2">
+            <div className="card card-compact w-96 bg-base-100 shadow-xl m-2  bg-secondary">
               <figure>
                 <img src={bundlePic} alt="Wedding Bundle" />
               </figure>
@@ -94,7 +94,7 @@ export default function Services() {
                 </div>
               </div>
             </div>
-            <div className="card card-compact w-96 bg-base-100 shadow-xl m-2">
+            <div className="card card-compact w-96 bg-base-100 shadow-xl m-2 bg-secondary">
               <figure>
                 <img src={schoolCorpPic} alt="School Dance" />
               </figure>

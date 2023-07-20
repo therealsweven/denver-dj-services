@@ -49,7 +49,7 @@ export default function InquiryForm() {
   return (
     <>
       <button
-        className="btn btn-primary"
+        className="btn btn-accent"
         type="button"
         onClick={() => setShowModal(true)}
       >

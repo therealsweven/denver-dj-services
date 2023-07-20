@@ -16,7 +16,8 @@ import Services from "./components/Services";
 import About from "./components/About";
 import Reviews from "./components/Reviews";
 import Contact from "./components/Contact";
-
+import { useEffect } from "react";
+import { themeChange } from "theme-change";
 const httpLink = createHttpLink({
   uri: "/graphql",
 });
@@ -44,11 +45,28 @@ const client = new ApolloClient({
 });
 
 function App() {
+  useEffect(() => {
+    themeChange(false);
+  }, []);
   return (
     <ApolloProvider client={client}>
       <Router>
         <html data-theme="mytheme"></html>
         <NavBar />
+        <select className="rounded text-xl" data-choose-theme>
+          <option value="dark">Dark</option>
+          <option value="light">Light</option>
+          <option value="retro">Retro</option>
+          <option value="bumblebee">Bumblebee</option>
+          <option value="synthwave">Synthwave</option>
+          <option value="cyberpunk">Cyberpunk</option>
+          <option value="valentine">Valentine</option>
+          <option value="garden">Garden</option>
+          <option value="pastel">Pastel</option>
+          <option value="luxury">Luxury</option>
+          <option value="autumn">Autumn</option>
+          <option value="mytheme">My Theme</option>
+        </select>
         <div>
           <Routes>
             <Route path="/" element={<Home />} />
