@@ -9,10 +9,10 @@ import InquiryForm from "./forms/InquiryForm";
 export default function Services() {
   return (
     <>
-      <main className="align-items-center">
-        <div className="items-center">
-          <h1 className="text-3xl text-center">Services</h1>
-          <h4 className="text-l text-center">
+      <main className="align-items-center mb-6">
+        <div className="items-center flex flex-col align-center">
+          <h1 className="text-3xl text-center mt-6">Services</h1>
+          <h4 className="text-xl text-center text-justify w-9/12 my-6">
             Our DJs are trained to provide you with the most magical vibes for
             any event you may need us for. Whether your looking for an emcee/DJ
             for your wedding reception, a school dance, a company party, a
@@ -24,16 +24,16 @@ export default function Services() {
         </div>
         <div>
           <div id="packageCardsTop" className="flex flex-wrap justify-center">
-            <div className="card card-compact w-96 bg-base-100 shadow-xl m-2">
+            <div className="card card-compact w-96 bg-base-100 shadow-xl m-2  bg-secondary border border-accent">
               <figure>
                 <img src={cermonyPic} alt="Wedding Ceremony" />
               </figure>
-              <div className="card-body text-center items-center bg-secondary">
+              <div className="card-body text-center items-center">
                 <h2 className="card-title text-center">
                   Wedding Ceremony Package
                 </h2>
                 <p>Starting at $399</p>
-                <p>
+                <p className="text-lg">
                   Includes a DJ, two small PA speakers and a wireless lapel mic
                   for the minister. Custom selection of pre-ceremony playlist
                   and ceremony walkdown songs.
@@ -43,7 +43,7 @@ export default function Services() {
                 </div>
               </div>
             </div>
-            <div className="card card-compact w-96 bg-base-100 shadow-xl m-2  bg-secondary">
+            <div className="card card-compact w-96 bg-base-100 shadow-xl m-2  bg-secondary border border-accent">
               <figure>
                 <img src={receptionPic} alt="Wedding Reception" />
               </figure>
@@ -52,7 +52,7 @@ export default function Services() {
                   Wedding Reception Package
                 </h2>
                 <p>Starting at $799</p>
-                <p>
+                <p className="text-lg">
                   Includes a DJ, two large PA speakers, basic disco lights,
                   strobe lights, and lasers for dance floor upon request.
                   Package includes up to 5 hours of reception music, or more at
@@ -70,7 +70,7 @@ export default function Services() {
             id="packageCardsBottom"
             className="flex flex-wrap justify-center"
           >
-            <div className="card card-compact w-96 bg-base-100 shadow-xl m-2  bg-secondary">
+            <div className="card card-compact w-96 bg-base-100 shadow-xl m-2  bg-secondary border border-accent">
               <figure>
                 <img src={bundlePic} alt="Wedding Bundle" />
               </figure>
@@ -79,7 +79,7 @@ export default function Services() {
                   Wedding Bundle Package
                 </h2>
                 <p>Starting at $999</p>
-                <p>
+                <p className="text-lg">
                   Includes a DJ, two large PA speakers and a wireless lapel mic
                   for the minister. Custom selection of pre-ceremony playlist
                   and ceremony walkdown songs. basic disco lights, strobe
@@ -94,7 +94,7 @@ export default function Services() {
                 </div>
               </div>
             </div>
-            <div className="card card-compact w-96 bg-base-100 shadow-xl m-2 bg-secondary">
+            <div className="card card-compact w-96 bg-base-100 shadow-xl m-2 bg-secondary border border-accent">
               <figure>
                 <img src={schoolCorpPic} alt="School Dance" />
               </figure>
@@ -103,8 +103,8 @@ export default function Services() {
                   School/Corporate Events
                 </h2>
                 <p>Starting at $399</p>
-                <p>
-                  Includesa DJ and up to 3 hours of music for a school or
+                <p className="text-lg">
+                  Includes a DJ and up to 3 hours of music for a school or
                   corporate event. Additional time may be added for $100/hr. Two
                   large PAs included, enough to fill a large room or outdoor
                   space with hundreds of people. Lighting options available.

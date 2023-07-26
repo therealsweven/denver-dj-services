@@ -39,6 +39,9 @@ export default function ContactForm({ setIsEditing }) {
         },
       });
       resetForm();
+      alert(
+        "Thanks for reaching out! Please check your email for confirmation and we'll get back to you shortly."
+      );
       console.log("submitted");
     } catch (err) {
       console.error(err);
@@ -47,8 +50,9 @@ export default function ContactForm({ setIsEditing }) {
   };
 
   return (
-    <div className="bg-secondary p-10 w-1/2 rounded-lg">
+    <div className="bg-secondary p-10 min-w-[50%] rounded-lg m-6 border border-accent">
       <Formik
+        id="contactForm"
         initialValues={initialValues}
         validationSchema={validationSchema}
         onSubmit={handleSubmit}
@@ -123,11 +127,21 @@ export default function ContactForm({ setIsEditing }) {
                 </span>
               </label>
               <label>
-                <Field type="radio" name="commMethod" value="Email" />
+                <Field
+                  type="radio"
+                  name="commMethod"
+                  value="Email"
+                  className="mr-2"
+                />
                 Email
               </label>
-              <label>
-                <Field type="radio" name="commMethod" value="Phone" />
+              <label className="ml-6">
+                <Field
+                  type="radio"
+                  name="commMethod"
+                  value="Phone"
+                  className="mr-2"
+                />
                 Phone
               </label>
             </div>

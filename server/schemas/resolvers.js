@@ -10,6 +10,7 @@ const resolvers = {
       if (userInput.dateOfEvent === "") {
         userInput.dateOfEvent = "none specified";
       }
+      userInput.date = userInput.dateOfEvent;
       if (userInput.package === "" || !userInput.package) {
         userInput.package = "none specified";
       }

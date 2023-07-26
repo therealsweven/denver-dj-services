@@ -1,7 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import headerLogo from "./images/white-transparent-logo.png";
+import headerTitle from "./images/ddjs-white-transparent.png";
+import { useEffect } from "react";
+import { themeChange } from "theme-change";
+import ClientLoginForm from "./forms/ClientLoginForm";
 
 export default function NavBar() {
+  useEffect(() => {
+    themeChange(false);
+  }, []);
+
   return (
     <div className="navbar bg-accent">
       <div className="navbar-start">
@@ -41,7 +50,8 @@ export default function NavBar() {
           </ul>
         </div>
         <Link to="/" className="btn btn-ghost normal-case text-xl">
-          Denver DJ Services
+          <img src={headerLogo} className="h-10" />
+          <img src={headerTitle} className="h-10" />
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
@@ -58,10 +68,19 @@ export default function NavBar() {
           <li>
             <Link to="/contact">Contact</Link>
           </li>
+          <li>
+            <select className="rounded text-xs mr-5" data-choose-theme>
+              <option value="mytheme">DDJS</option>
+              <option value="synthwave">Synthwave</option>
+              <option value="cyberpunk">Cyberpunk</option>
+              <option value="valentine">Valentine</option>
+              <option value="luxury">Luxury</option>
+            </select>
+          </li>
         </ul>
       </div>
       <div className="navbar-end">
-        <button className="btn">Client Login</button>
+        <ClientLoginForm />
       </div>
     </div>
   );

@@ -70,7 +70,7 @@ module.exports = {
         text: `Name: ${info.name}
         Email: ${info.email}
         Phone: ${info.phone}
-        Date: ${info.dateOfEvent}
+        Date: ${info.date}
         Comm: ${info.commMethod}
         Package: ${info.package}
         Info: ${info.message}

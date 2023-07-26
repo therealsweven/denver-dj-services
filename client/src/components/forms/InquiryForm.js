@@ -60,7 +60,7 @@ export default function InquiryForm() {
           <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
             <div className="relative w-auto my-6 mx-auto max-w-3xl">
               {/*content*/}
-              <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+              <div className="border border-accent p-6 rounded-lg shadow-lg relative flex flex-col w-full bg-secondary outline-none focus:outline-none">
                 {/*header*/}
                 <div className="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
                   <h3 className="text-3xl font-semibold">Inquiry</h3>
@@ -73,7 +73,7 @@ export default function InquiryForm() {
                     </span>
                   </button>
                 </div>
-                {/*body*/}
+
                 <Formik
                   initialValues={initialValues}
                   validationSchema={validationSchema}
@@ -202,18 +202,28 @@ export default function InquiryForm() {
                           </span>
                         </label>
                         <label>
-                          <Field type="radio" name="commMethod" value="Email" />
+                          <Field
+                            type="radio"
+                            name="commMethod"
+                            value="Email"
+                            className="mr-1"
+                          />
                           Email
                         </label>
-                        <label>
-                          <Field type="radio" name="commMethod" value="Phone" />
+                        <label className="ml-6">
+                          <Field
+                            type="radio"
+                            name="commMethod"
+                            value="Phone"
+                            className="mr-1"
+                          />
                           Phone
                         </label>
                       </div>
 
                       <div className="form-control mt-6">
                         <button
-                          className="btn btn-sm btn-primary mx-auto"
+                          className="btn btn-sm btn-accent mx-auto mb-6"
                           type="submit"
                           disabled={isSubmitting}
                         >
@@ -226,7 +236,7 @@ export default function InquiryForm() {
                 {/*footer*/}
                 <div className="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
                   <button
-                    className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                    className="text-white background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                     type="button"
                     onClick={() => setShowModal(false)}
                   >
