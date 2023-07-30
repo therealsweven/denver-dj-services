@@ -7,7 +7,7 @@ export default function About() {
       <h1 className="text-3xl text-center mt-6">About</h1>
       <div className="flex flex-wrap-reverse justify-center mt-3">
         <div className="flex flex-col justify-center align-center p-12 max-w-4xl">
-          <h3 className="text-left text-justify text-xl">
+          <h3 className="text-left text-justify m-3 text-xl">
             Founded by Bobby Simpson AKA SWEVEN in 2023, Denver DJ Services is
             dedicated to providing those in the Denver area with the most
             magical experience you've ever had with a professional DJ. Although
