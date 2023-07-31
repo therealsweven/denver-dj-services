@@ -5,7 +5,7 @@ import { useState } from "react";
 import { CREATE_INQUIRY } from "../../utils/mutations";
 import * as Yup from "yup";
 
-export default function ContactForm({ setIsEditing }) {
+export default function ContactForm() {
   const [createInquiry] = useMutation(CREATE_INQUIRY);
   const [successOpen, setSuccessOpen] = useState(false);
   const [formOpen, setFormOpen] = useState(true);

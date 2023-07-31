@@ -37,6 +37,7 @@ const typeDefs = gql`
     commMethod: String
     responded: Boolean
     active: Boolean
+    createdAt: String
   }
 
   type Auth {
@@ -60,6 +61,7 @@ const typeDefs = gql`
       responded: Boolean
       active: Boolean
     ): Inquiry
+    adminLogin(email: String!, password: String!): Admin
   }
 `;
 

@@ -36,5 +36,16 @@ const CREATE_INQUIRY = gql`
     }
   }
 `;
+const ADMIN_LOGIN = gql`
+  mutation Mutation($email: String!, $password: String!) {
+    adminLogin(email: $email, password: $password) {
+      _id
+      email
+      firstName
+      lastName
+      password
+    }
+  }
+`;
 
-export { CREATE_INQUIRY };
+export { CREATE_INQUIRY, ADMIN_LOGIN };

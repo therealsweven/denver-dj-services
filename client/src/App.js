@@ -17,6 +17,7 @@ import Services from "./components/Services";
 import About from "./components/About";
 import Reviews from "./components/Reviews";
 import Contact from "./components/Contact";
+import Admin from "./components/Admin";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -25,15 +26,15 @@ const httpLink = createHttpLink({
 const authLink = setContext((_, { headers }) => {
   // get the authentication token from local storage if it exists
   const token = localStorage.getItem("id_token");
-  const type = localStorage.getItem("profType");
+  const adminLoggedIn = localStorage.getItem("adminLoggedIn");
   const entity = localStorage.getItem("profEntity");
-  console.log(type, entity);
+  console.log(entity);
   // return the headers to the context so httpLink can read them
   return {
     headers: {
       ...headers,
       authorization: token ? `Bearer ${token}` : "",
-      activeProfileType: type,
+      adminLoggedIn: adminLoggedIn,
       activeProfileEntity: entity,
     },
   };
@@ -58,6 +59,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/reviews" element={<Reviews />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/admin" element={<Admin />} />
           </Routes>
         </div>
         <Footer />

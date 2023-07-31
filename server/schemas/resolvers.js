@@ -1,9 +1,17 @@
 const { AuthenticationError } = require("apollo-server-express");
 const { Inquiry } = require("../models/Inquiry");
+const { Admin } = require("../models/Admin");
 const { sendConfirmation, sendInfoToMe } = require("../utils/helpers");
 
 const resolvers = {
-  Query: {},
+  Query: {
+    inquiries: async () => {
+      console.log("test");
+      const data = await Inquiry.find({ active: true });
+      console.log(data);
+      return data;
+    },
+  },
   Mutation: {
     createInquiry: async (parent, userInput) => {
       console.log(userInput);
@@ -25,6 +33,22 @@ const resolvers = {
       }
 
       return inquiry;
+    },
+    adminLogin: async (parent, { email, password }) => {
+      const adminData = await Admin.findOne({ email });
+      console.log(adminData);
+      if (!adminData) {
+        throw new AuthenticationError(
+          "No admin account with that information found!"
+        );
+      }
+
+      const correctPw = await adminData.isCorrectPassword(password);
+
+      if (!correctPw) {
+        throw new AuthenticationError("Incorrect password!");
+      }
+      return adminData;
     },
   },
 };
