@@ -50,8 +50,16 @@ export default function NavBar() {
           </ul>
         </div>
         <Link to="/" className="btn btn-ghost normal-case text-xl">
-          <img src={headerLogo} className="h-10" />
-          <img src={headerTitle} className="h-10" />
+          <img
+            src={headerLogo}
+            className="h-10"
+            alt="Denver DJ Services Logo Icon"
+          />
+          <img
+            src={headerTitle}
+            className="h-10"
+            alt="Denver DJ Services Logo Text"
+          />
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
