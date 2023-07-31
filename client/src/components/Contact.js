@@ -7,14 +7,14 @@ export default function Contact() {
       <h1 className="text-4xl text-center my-6">Contact Us</h1>
       <div className="flex justify-evenly flex-wrap">
         <div className="flex flex-col max-w-[66%] min-w-[600px] border-r">
-          <div className="flex justify-evenly flex-wrap">
-            <div className="w-[250px] text-center bg-neutral border border-accent rounded-lg p-3 font-bold shadow-lg shadow-secondary">
+          <div className="flex place-items-center flex-col">
+            <div className="w-[250px] text-center  border-y border-accent p-3 font-bold ">
               <h2 className="text-2xl  text-center">Call us: </h2>
               <a href="tel:3038157012" className="text-xl  text-center">
                 (303) 815-7012
               </a>
             </div>
-            <div className="w-[250px] text-center bg-neutral border border-accent rounded-lg p-3 font-bold shadow-lg shadow-secondary">
+            <div className="w-[250px] text-center border-y border-accent p-3 font-bold mt-6">
               <h2 className="text-2xl text-center">Email us: </h2>
               <a
                 href="mailto:info@denverdjservices.com"
