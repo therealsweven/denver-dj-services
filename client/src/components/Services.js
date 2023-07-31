@@ -11,7 +11,7 @@ export default function Services() {
     <>
       <main className="align-items-center mb-6">
         <div className="items-center flex flex-col align-center">
-          <h1 className="text-3xl text-center mt-6">Services</h1>
+          <h1 className="text-4xl text-center mt-6">Services</h1>
           <h4 className="text-xl text-center text-justify w-9/12 my-6">
             Our DJs are trained to provide you with the most magical vibes for
             any event you may need us for. Whether your looking for an emcee/DJ
