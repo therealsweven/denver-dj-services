@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 import weddingIcon from "./images/wedding-icon.png";
 import danceIcon from "./images/dance-icon.png";
 import partyIcon from "./images/party-icon.png";
-import carouselPic1 from "./images/andreas-ronningen-S2YssLw97l4-unsplash.jpg";
-import carouselPic2 from "./images/neal-e-johnson-fwXkHBFoETE-unsplash.jpg";
-import carouselPic3 from "./images/mitchell-orr-ine1sPh-bag-unsplash.jpg";
-import carouselPic4 from "./images/thomas-william-1IPCQ-cRD5k-unsplash.jpg";
+import carouselPic1 from "./images/best-wedding-entertainment.jpg";
+import carouselPic2 from "./images/most-fun-wedding-dj.jpg";
+import carouselPic3 from "./images/wedding-dancing-denver-dj.jpg";
+import carouselPic4 from "./images/reputable denver wedding dj.jpg";
 
 export default function Home() {
   return (
