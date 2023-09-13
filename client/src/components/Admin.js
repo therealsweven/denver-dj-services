@@ -5,6 +5,7 @@ import { useState } from "react";
 import { ADMIN_LOGIN } from "../utils/mutations";
 import * as Yup from "yup";
 import Inquiries from "./Inquiries";
+import CreateClientForm from "./forms/CreateClientForm";
 
 export default function Admin() {
   const [adminLoggedIn, setAdminLoggedIn] = useState(
@@ -113,7 +114,8 @@ export default function Admin() {
           <div>
             <h2>Inquiries</h2>
             <Inquiries />
-            <div>cards</div>
+            <h1>Create New Client</h1>
+            <CreateClientForm />
           </div>
         </div>
       )}

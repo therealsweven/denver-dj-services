@@ -109,9 +109,9 @@ module.exports = {
         from: "Denver DJ Services 🎵<info@denverdjservices.com>",
         to: info.email,
         subject: "Denver DJ Services Portal Access",
-        text: `Hello ${info.first},
+        text: `Hello ${info.firstName},
         You may access our online portal to make payments and update your contact information.  Please visit www.denverdjservices.com to login using the email address this message was sent to and the temporary password provided in this email.  You may change your password once you are logged in.  Your temporary password is '${info.password}'.  Please feel free to reach out by phone or email if you have any issues accessing your account.  Thanks, and have a magical day! Best wishes, Denver DJ Services`,
-        html: `<p>Hello ${info.first},</p>
+        html: `<p>Hello ${info.firstName},</p>
         <p>You can access our online portal to make digital payments and update your contact information.  Please visit www.denverdjservices.com to login using the email address this message was sent to and the temporary password provided in this email.  You may change your password once you are logged in. </p> 
         <p>Your temporary password is <b>${info.password}</b>  </p>
         <p>Please feel free to reach out by phone or email if you have any issues accessing your account.  Thanks, and have a magical day!</p>

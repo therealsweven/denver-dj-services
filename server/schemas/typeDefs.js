@@ -1,9 +1,5 @@
 const { gql } = require("apollo-server-express");
 
-// go back and look at queries for education and experience - not necessary or is?
-// unfollowEntity should reference Entity or User model?
-// removeEntity should reference Entity model...?
-
 const typeDefs = gql`
   type Client {
     _id: ID!
@@ -42,7 +38,7 @@ const typeDefs = gql`
 
   type Auth {
     token: ID!
-    user: Client
+    client: Client
   }
 
   type Query {
@@ -61,7 +57,27 @@ const typeDefs = gql`
       responded: Boolean
       active: Boolean
     ): Inquiry
+    createAdmin(
+      firstName: String!
+      lastName: String!
+      email: String!
+      password: String!
+    ): Admin
+    createClient(
+      firstName: String!
+      lastName: String!
+      email: String!
+      phone: String
+      password: String!
+      street: String
+      city: String
+      state: String
+      zip: String
+    ): Client
     adminLogin(email: String!, password: String!): Admin
+    clientLogin(email: String!, password: String!): Auth
+
+    markResponded(inquiryId: ID!): Inquiry
   }
 `;
 

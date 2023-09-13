@@ -47,5 +47,63 @@ const ADMIN_LOGIN = gql`
     }
   }
 `;
+const MARK_RESPONDED = gql`
+  mutation MarkResponded($inquiryId: ID!) {
+    markResponded(inquiryId: $inquiryId) {
+      _id
+    }
+  }
+`;
+const CREATE_ADMIN = gql`
+  mutation CreateAdmin(
+    $firstName: String!
+    $lastName: String!
+    $email: String!
+    $password: String!
+  ) {
+    createAdmin(
+      firstName: $firstName
+      lastName: $lastName
+      email: $email
+      password: $password
+    ) {
+      _id
+    }
+  }
+`;
+const CREATE_CLIENT = gql`
+  mutation CreateClient(
+    $firstName: String!
+    $lastName: String!
+    $email: String!
+    $password: String!
+  ) {
+    createClient(
+      firstName: $firstName
+      lastName: $lastName
+      email: $email
+      password: $password
+    ) {
+      _id
+    }
+  }
+`;
+const CLIENT_LOGIN = gql`
+  mutation ClientLogin($email: String!, $password: String!) {
+    clientLogin(email: $email, password: $password) {
+      token
+      client {
+        _id
+      }
+    }
+  }
+`;
 
-export { CREATE_INQUIRY, ADMIN_LOGIN };
+export {
+  CREATE_INQUIRY,
+  ADMIN_LOGIN,
+  MARK_RESPONDED,
+  CREATE_CLIENT,
+  CREATE_ADMIN,
+  CLIENT_LOGIN,
+};

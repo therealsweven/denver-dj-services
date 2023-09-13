@@ -1,37 +1,46 @@
 import React from "react";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import { useMutation } from "@apollo/client";
-// import { CLIENT_LOGIN } from "../../utils/mutations";
+import { CLIENT_LOGIN } from "../../utils/mutations";
 import * as Yup from "yup";
+import { useNavigate } from "react-router-dom";
+import Auth from "../../utils/auth";
 
 export default function ClientLoginForm() {
   const [showModal, setShowModal] = React.useState(false);
-  //   const [clientLogin] = useMutation(CLIENT_LOGIN);
+
+  const [clientLogin, { error, data }] = useMutation(CLIENT_LOGIN);
+  const navigate = useNavigate();
   const initialValues = {
     email: "",
     password: "",
   };
 
   const validationSchema = Yup.object().shape({
-    name: Yup.string().required("This field is required"),
     email: Yup.string()
       .email("Email address not formatted correctly")
       .required("This field is required"),
-    message: Yup.string().required("This field is required"),
+    password: Yup.string().required("This field is required"),
   });
 
   const handleSubmit = async (values, { resetForm, setSubmitting }) => {
     try {
       console.log(values);
-      //   await clientLogin({
-      //     variables: {
-      //       email: values.email,
-      //       password: values.password,
-      //     },
-      //   });
+      await clientLogin({
+        variables: {
+          email: values.email,
+          password: values.password,
+        },
+      });
+
       resetForm();
       console.log("submitted");
       setShowModal(false);
+      // verify token
+      console.log(data.clientLogin);
+      Auth.login(data.clientLogin.token);
+      navigate("/clientPortal");
+      window.location.reload();
     } catch (err) {
       console.error(err);
     }
@@ -68,7 +77,7 @@ export default function ClientLoginForm() {
                 <Formik
                   initialValues={initialValues}
                   validationSchema={validationSchema}
-                  //   onSubmit={handleSubmit}
+                  onSubmit={handleSubmit}
                 >
                   {({ isSubmitting }) => (
                     <Form>

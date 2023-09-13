@@ -21,7 +21,8 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^7.0.2",
     "nodemailer": "^6.9.4",
-    "theme-change": "^2.5.0"
+    "theme-change": "^2.5.0",
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.3"
