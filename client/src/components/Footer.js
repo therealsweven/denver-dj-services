@@ -1,12 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
+
 import headerLogo from "./images/white-transparent-logo.png";
 
 export default function Footer() {
   return (
     <footer className="footer items-center p-4 bg-accent text-neutral-content">
       <div className="items-center grid-flow-col">
-        <img src={headerLogo} className="h-10" />
+        <img src={headerLogo} className="h-10" alt="denver dj services logo" />
         <p>Copyright © 2023 - All right reserved</p>
       </div>
       <div className="grid-flow-col gap-4 md:place-self-center md:justify-self-end">

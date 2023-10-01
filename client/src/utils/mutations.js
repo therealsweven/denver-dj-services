@@ -48,7 +48,7 @@ const ADMIN_LOGIN = gql`
   }
 `;
 const MARK_RESPONDED = gql`
-  mutation MarkResponded($inquiryId: ID!) {
+  mutation MarkResponded($inquiryId: String!) {
     markResponded(inquiryId: $inquiryId) {
       _id
     }

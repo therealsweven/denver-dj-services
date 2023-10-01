@@ -34,25 +34,44 @@ export default function Inquiries() {
         <div className="flex flex-wrap ">
           {inquiries.map((inquiry) => (
             <div
-              className="border border-accent rounded-lg bg-secondary m-2"
+              className="border border-accent rounded-lg bg-secondary m-2 p-3"
               key={inquiry._id}
             >
               <p>
-                Date of Inquiry:
+                <b>Date of Inquiry: </b>
                 {new Date(parseInt(inquiry.createdAt, 10)).toDateString()}
               </p>
-              <p>Name: {inquiry.name}</p>
-              <p>Date of Event: {inquiry.date}</p>
               <p>
-                Email: <a href={"mailto:" + inquiry.email}>{inquiry.email}</a>
+                <b>Name: </b>
+                {inquiry.name}
               </p>
               <p>
-                Phone: <a href={"tel:" + inquiry.phone}>{inquiry.phone}</a>
+                <b>Date of Event: </b>
+                {inquiry.date}
               </p>
-              <p>Comm: {inquiry.commMethod}</p>
-              <p>Package: {inquiry.package}</p>
-              <p>Message: {inquiry.message}</p>
-              <p>Responded to: {inquiry.responded ? "yes" : "no"}</p>
+              <p>
+                <b>Email: </b>
+                <a href={"mailto:" + inquiry.email}>{inquiry.email}</a>
+              </p>
+              <p>
+                <b>Phone: </b>
+                <a href={"tel:" + inquiry.phone}>{inquiry.phone}</a>
+              </p>
+              <p>
+                <b>Comm: </b>
+                {inquiry.commMethod}
+              </p>
+              <p>
+                <b>Package: </b>
+                {inquiry.package}
+              </p>
+              <p>
+                <b>Message: </b> {inquiry.message}
+              </p>
+              <p>
+                <b>Responded to: </b>
+                {inquiry.responded ? "yes" : "no"}
+              </p>
               {inquiry.responded ? (
                 <></>
               ) : (

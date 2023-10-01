@@ -31,6 +31,7 @@ const resolvers = {
       }
       console.log(userInput);
       userInput.active = true;
+      userInput.responded = false;
       const inquiry = await Inquiry.create(userInput);
       const email1 = await sendConfirmation(userInput);
       const email2 = await sendInfoToMe(userInput);
@@ -91,11 +92,13 @@ const resolvers = {
       return { token, clientData };
     },
     markResponded: async (parent, inquiryId) => {
-      await Inquiry.findOneAndUpdate(
+      console.log(inquiryId);
+      const inquiry = await Inquiry.findOneAndUpdate(
         { _id: inquiryId },
         { responded: true },
         { new: true }
       );
+      console.log(inquiry);
     },
   },
 };
