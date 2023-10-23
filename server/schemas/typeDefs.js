@@ -76,7 +76,8 @@ const typeDefs = gql`
     ): Client
     adminLogin(email: String!, password: String!): Admin
     clientLogin(email: String!, password: String!): Auth
-    markResponded(inquiryId: String!): Inquiry
+    markResponded(inquiryId: ID!): Inquiry
+    deleteInquiry(inquiryId: ID!): Inquiry
   }
 `;
 

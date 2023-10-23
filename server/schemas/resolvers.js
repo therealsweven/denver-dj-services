@@ -91,11 +91,20 @@ const resolvers = {
       const token = signToken(clientData);
       return { token, clientData };
     },
-    markResponded: async (parent, inquiryId) => {
-      console.log(inquiryId);
+    markResponded: async (parent, args) => {
+      console.log(args.inquiryId);
       const inquiry = await Inquiry.findOneAndUpdate(
-        { _id: inquiryId },
+        { _id: args.inquiryId },
         { responded: true },
+        { new: true }
+      );
+      console.log(inquiry);
+    },
+    deleteInquiry: async (parent, args) => {
+      console.log(args.inquiryId);
+      const inquiry = await Inquiry.findOneAndUpdate(
+        { _id: args.inquiryId },
+        { active: false },
         { new: true }
       );
       console.log(inquiry);

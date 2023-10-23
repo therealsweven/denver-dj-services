@@ -2,9 +2,11 @@ import React from "react";
 import { useQuery, useMutation } from "@apollo/client";
 import { QUERY_INQUIRIES } from "../utils/queries";
 import { MARK_RESPONDED } from "../utils/mutations";
+import { DELETE_INQUIRY } from "../utils/mutations";
 export default function Inquiries() {
   const [markResponded] = useMutation(MARK_RESPONDED);
-  const { loading, data, error } = useQuery(QUERY_INQUIRIES, {
+  const [deleteInquiry] = useMutation(DELETE_INQUIRY);
+  const { loading, data, error, refetch } = useQuery(QUERY_INQUIRIES, {
     onCompleted: (data) => console.log("Query completed:", data),
     onError: (error) => console.error("Query error:", error),
   });
@@ -21,9 +23,19 @@ export default function Inquiries() {
     console.log(event.target.id);
     await markResponded({
       variables: {
-        _id: event.target.id,
+        inquiryId: event.target.id,
       },
     });
+    refetch();
+  };
+  const markInquiryInactive = async (event) => {
+    console.log(event.target.id);
+    await deleteInquiry({
+      variables: {
+        inquiryId: event.target.id,
+      },
+    });
+    refetch();
   };
 
   if (!loading) {
@@ -83,6 +95,13 @@ export default function Inquiries() {
                   Mark Responded
                 </button>
               )}
+              <button
+                id={inquiry._id}
+                className="btn border border-accent rounded-lg"
+                onClick={markInquiryInactive}
+              >
+                DELETE INQUIRY
+              </button>
             </div>
           ))}
         </div>

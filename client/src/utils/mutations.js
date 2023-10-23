@@ -36,6 +36,13 @@ const CREATE_INQUIRY = gql`
     }
   }
 `;
+const DELETE_INQUIRY = gql`
+  mutation DeleteInquiry($inquiryId: ID!) {
+    deleteInquiry(inquiryId: $inquiryId) {
+      _id
+    }
+  }
+`;
 const ADMIN_LOGIN = gql`
   mutation Mutation($email: String!, $password: String!) {
     adminLogin(email: $email, password: $password) {
@@ -48,9 +55,10 @@ const ADMIN_LOGIN = gql`
   }
 `;
 const MARK_RESPONDED = gql`
-  mutation MarkResponded($inquiryId: String!) {
+  mutation MarkResponded($inquiryId: ID!) {
     markResponded(inquiryId: $inquiryId) {
       _id
+      active
     }
   }
 `;
@@ -101,6 +109,7 @@ const CLIENT_LOGIN = gql`
 
 export {
   CREATE_INQUIRY,
+  DELETE_INQUIRY,
   ADMIN_LOGIN,
   MARK_RESPONDED,
   CREATE_CLIENT,
