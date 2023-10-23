@@ -19,6 +19,7 @@ import About from "./components/About";
 import Reviews from "./components/Reviews";
 import Contact from "./components/Contact";
 import Admin from "./components/Admin";
+import ClientDirectory from "./components/ClientDirectory";
 import ClientPortal from "./components/ClientPortal";
 
 const httpLink = createHttpLink({
@@ -58,6 +59,10 @@ function App() {
             <Route path="/reviews" element={<Reviews />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/admin" element={<Admin />} />
+            <Route
+              path="/admin/clientDirectory"
+              element={<ClientDirectory />}
+            />
             <Route path="/clientPortal" element={<ClientPortal />} />
           </Routes>
         </div>

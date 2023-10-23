@@ -17,3 +17,20 @@ export const QUERY_INQUIRIES = gql`
     }
   }
 `;
+
+export const QUERY_CLIENTS = gql`
+  query Query {
+    clients {
+      _id
+      city
+      email
+      firstName
+      lastName
+      password
+      phone
+      state
+      street
+      zip
+    }
+  }
+`;

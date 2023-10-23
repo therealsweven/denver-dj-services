@@ -13,8 +13,14 @@ const { signToken } = require("../utils/auth");
 const resolvers = {
   Query: {
     inquiries: async () => {
-      console.log("test");
+      // console.log("test");
       const data = await Inquiry.find({ active: true });
+      console.log(data);
+      return data;
+    },
+    clients: async () => {
+      // console.log("test");
+      const data = await Client.find();
       console.log(data);
       return data;
     },

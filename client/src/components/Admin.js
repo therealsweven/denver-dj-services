@@ -5,6 +5,7 @@ import { useState } from "react";
 import { ADMIN_LOGIN } from "../utils/mutations";
 import * as Yup from "yup";
 import Inquiries from "./Inquiries";
+import ClientDirectory from "./ClientDirectory";
 import CreateClientForm from "./forms/CreateClientForm";
 
 export default function Admin() {
@@ -114,6 +115,8 @@ export default function Admin() {
           <div>
             <h2>Inquiries</h2>
             <Inquiries />
+            <h2>Clients</h2>
+            <ClientDirectory />
             <h1>Create New Client</h1>
             <CreateClientForm />
           </div>
