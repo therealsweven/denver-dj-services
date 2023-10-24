@@ -39,6 +39,7 @@ const clientSchema = new Schema(
     zip: {
       type: String,
     },
+    invoices: [{ type: Schema.Types.ObjectId, ref: "Invoice" }],
   },
   {
     timestamps: true,

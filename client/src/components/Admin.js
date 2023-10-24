@@ -7,6 +7,7 @@ import * as Yup from "yup";
 import Inquiries from "./Inquiries";
 import ClientDirectory from "./ClientDirectory";
 import CreateClientForm from "./forms/CreateClientForm";
+import CreateInvoiceForm from "./forms/CreateInvoiceForm";
 
 export default function Admin() {
   const [adminLoggedIn, setAdminLoggedIn] = useState(
@@ -110,8 +111,9 @@ export default function Admin() {
       )}
       {adminLoggedIn && (
         <div>
-          <h1>test admin home</h1>
-          <button onClick={adminLogout}>Logout</button>
+          <button onClick={adminLogout} className="btn">
+            Logout
+          </button>
           <div>
             <h2>Inquiries</h2>
             <Inquiries />
@@ -119,6 +121,8 @@ export default function Admin() {
             <ClientDirectory />
             <h1>Create New Client</h1>
             <CreateClientForm />
+            <h1>Create New Invoice</h1>
+            <CreateInvoiceForm />
           </div>
         </div>
       )}

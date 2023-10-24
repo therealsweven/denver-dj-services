@@ -2,6 +2,7 @@ const { AuthenticationError } = require("apollo-server-express");
 const { Inquiry } = require("../models/Inquiry");
 const { Admin } = require("../models/Admin");
 const { Client } = require("../models/Client");
+const { Invoice } = require("../models/Invoice");
 const {
   sendConfirmation,
   sendInfoToMe,
@@ -63,6 +64,16 @@ const resolvers = {
         console.log("Email Sent", email);
         return client;
       }
+    },
+    createInvoice: async (parent, userInput) => {
+      console.log(userInput);
+      const invoice = await Invoice.create(userInput);
+      // const email = await sendClientPortalLogin(userInput);
+      // if (email.response) {
+      //   console.log("Email Sent", email);
+      //   return client;
+      // }
+      return invoice;
     },
     adminLogin: async (parent, { email, password }) => {
       const adminData = await Admin.findOne({ email });

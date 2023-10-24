@@ -36,6 +36,17 @@ const typeDefs = gql`
     createdAt: String
   }
 
+  type Invoice {
+    _id: ID!
+    client: Client
+    amount: Int
+    discount: Int
+    dateOfEvent: String
+    package: String
+    notes: String
+    active: Boolean
+  }
+
   type Auth {
     token: ID!
     client: Client
@@ -75,6 +86,15 @@ const typeDefs = gql`
       state: String
       zip: String
     ): Client
+    createInvoice(
+      client: ID!
+      amount: Int!
+      discount: Int
+      dateOfEvent: String!
+      package: String
+      notes: String
+      active: Boolean
+    ): Invoice
     adminLogin(email: String!, password: String!): Admin
     clientLogin(email: String!, password: String!): Auth
     markResponded(inquiryId: ID!): Inquiry

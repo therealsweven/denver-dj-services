@@ -60,7 +60,7 @@ export default function CreateClientForm() {
     <div className="bg-secondary p-10 min-w-[50%] rounded-lg m-6 border border-accent">
       {formOpen && (
         <Formik
-          id="contactForm"
+          id="createClientForm"
           initialValues={initialValues}
           validationSchema={validationSchema}
           onSubmit={handleSubmit}

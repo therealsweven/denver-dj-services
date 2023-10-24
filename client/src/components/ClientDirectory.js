@@ -4,7 +4,7 @@ import { QUERY_CLIENTS } from "../utils/queries";
 //import { UPDATE_CLIENT } from "../utils/mutations";
 export default function ClientDirectory() {
   //const [updateCLient] = useMutation(UPDATE_CLIENT);
-  const { loading, data, error, refetch } = useQuery(QUERY_CLIENTS, {
+  const { loading, data, error } = useQuery(QUERY_CLIENTS, {
     onCompleted: (data) => console.log("Query completed:", data),
     onError: (error) => console.error("Query error:", error),
   });

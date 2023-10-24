@@ -96,6 +96,30 @@ const CREATE_CLIENT = gql`
     }
   }
 `;
+const CREATE_INVOICE = gql`
+  mutation Mutation(
+    $client: ID!
+    $amount: Int!
+    $dateOfEvent: String!
+    $discount: Int
+    $package: String
+    $notes: String
+    $active: Boolean
+  ) {
+    createInvoice(
+      client: $client
+      amount: $amount
+      dateOfEvent: $dateOfEvent
+      discount: $discount
+      package: $package
+      notes: $notes
+      active: $active
+    ) {
+      _id
+    }
+  }
+`;
+
 const CLIENT_LOGIN = gql`
   mutation ClientLogin($email: String!, $password: String!) {
     clientLogin(email: $email, password: $password) {
@@ -113,6 +137,7 @@ export {
   ADMIN_LOGIN,
   MARK_RESPONDED,
   CREATE_CLIENT,
+  CREATE_INVOICE,
   CREATE_ADMIN,
   CLIENT_LOGIN,
 };
