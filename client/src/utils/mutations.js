@@ -98,7 +98,7 @@ const CREATE_CLIENT = gql`
 `;
 const CREATE_INVOICE = gql`
   mutation Mutation(
-    $client: ID!
+    $client: String!
     $amount: Int!
     $dateOfEvent: String!
     $discount: Int

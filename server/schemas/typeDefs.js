@@ -87,7 +87,7 @@ const typeDefs = gql`
       zip: String
     ): Client
     createInvoice(
-      client: ID!
+      client: String!
       amount: Int!
       discount: Int
       dateOfEvent: String!

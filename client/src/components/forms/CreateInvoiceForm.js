@@ -32,7 +32,7 @@ export default function CreateInvoiceForm() {
     dateOfEvent: "",
     package: "",
     notes: "",
-    paid: "",
+    active: true,
   };
 
   const validationSchema = Yup.object().shape({
@@ -42,7 +42,7 @@ export default function CreateInvoiceForm() {
     dateOfEvent: Yup.date().required("This field is required"),
     package: Yup.string(),
     notes: Yup.string(),
-    paid: Yup.boolean(),
+    active: Yup.bool().required("This field is required"),
   });
 
   const handleSubmit = async (values, { resetForm, setSubmitting }) => {
@@ -56,7 +56,7 @@ export default function CreateInvoiceForm() {
           dateOfEvent: values.dateOfEvent,
           package: values.package,
           notes: values.notes,
-          active: values.paid,
+          active: values.active,
         },
       });
       resetForm();
@@ -77,7 +77,7 @@ export default function CreateInvoiceForm() {
           validationSchema={validationSchema}
           onSubmit={handleSubmit}
         >
-          {({ isSubmitting }) => (
+          {({ isSubmitting, setFieldValue }) => (
             <Form>
               {/* Clients populated from query and selected by admin user */}
               <div className="form-control">
@@ -169,9 +169,21 @@ export default function CreateInvoiceForm() {
                 />
                 <p className="text-s">(Optional)</p>
               </div>
+              {/* Notes */}
+              <div className="form-control">
+                <label className="label" htmlFor="notes">
+                  <span className="label-text text-xl ">Notes</span>
+                </label>
+                <Field
+                  className="input input-bordered"
+                  type="text"
+                  name="notes"
+                />
+                <ErrorMessage name="notes" component="div" className="error" />
+              </div>
               {/* Has the bill already been paid? */}
-              <div role="group" aria-labelledby="commMethod">
-                <label className="label" htmlFor="messageBody">
+              <div role="group" aria-labelledby="active">
+                <label className="label" htmlFor="active">
                   <span className="label-text text-xl ">
                     Has this bill already been paid?
                   </span>
@@ -179,9 +191,10 @@ export default function CreateInvoiceForm() {
                 <label>
                   <Field
                     type="radio"
-                    name="paid"
+                    name="active"
                     // need to mark active as false if paid
                     value={false}
+                    onChange={() => setFieldValue("active", false)}
                     className="mr-2"
                   />
                   Yes
@@ -189,9 +202,10 @@ export default function CreateInvoiceForm() {
                 <label className="ml-6">
                   <Field
                     type="radio"
-                    name="paid"
+                    name="active"
                     //mark active as true if not paid yet
                     value={true}
+                    onChange={() => setFieldValue("active", true)}
                     className="mr-2"
                   />
                   No

@@ -68,6 +68,10 @@ const resolvers = {
     createInvoice: async (parent, userInput) => {
       console.log(userInput);
       const invoice = await Invoice.create(userInput);
+      const client = await Client.findByIdAndUpdate(
+        { _id: userInput.client },
+        { $addToSet: { invoices: invoice._id } }
+      );
       // const email = await sendClientPortalLogin(userInput);
       // if (email.response) {
       //   console.log("Email Sent", email);
