@@ -12,6 +12,7 @@ const typeDefs = gql`
     city: String
     state: String
     zip: String
+    invoices: [Invoice]
   }
 
   type Admin {
@@ -55,6 +56,7 @@ const typeDefs = gql`
   type Query {
     inquiries: [Inquiry]
     clients: [Client]
+    me(clientId: ID!): Client
   }
 
   type Mutation {

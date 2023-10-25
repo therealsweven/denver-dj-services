@@ -13,6 +13,12 @@ const { signToken } = require("../utils/auth");
 
 const resolvers = {
   Query: {
+    me: async (parent, { clientId }) => {
+      const data = await Client.findById({ _id: clientId }).populate(
+        "invoices"
+      );
+      return data;
+    },
     inquiries: async () => {
       // console.log("test");
       const data = await Inquiry.find({ active: true });

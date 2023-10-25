@@ -1,6 +1,26 @@
 import React from "react";
+import { useQuery, useMutation } from "@apollo/client";
+import { QUERY_ME } from "../utils/queries";
 
 export default function ClientPortal() {
+  console.log(localStorage.getItem("clientId"));
+  const { loading, data, error } = useQuery(
+    QUERY_ME,
+    { variables: { clientId: localStorage.getItem("clientId") } },
+    {
+      onCompleted: (data) => console.log("Query completed:", data),
+      onError: (error) => console.error("Query error:", error),
+    }
+  );
+  const me = data?.me || [];
+
+  if (loading) {
+    return <h2>...loading</h2>;
+  }
+  if (error) {
+    return <h2>Error: {error.message}</h2>;
+  }
+  console.log(me);
   return (
     <>
       <h1 className="text-4xl text-center mt-6">Client Portal</h1>

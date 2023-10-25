@@ -34,3 +34,29 @@ export const QUERY_CLIENTS = gql`
     }
   }
 `;
+
+export const QUERY_ME = gql`
+  query Me($clientId: ID!) {
+    me(clientId: $clientId) {
+      _id
+      city
+      email
+      firstName
+      invoices {
+        _id
+        active
+        amount
+        dateOfEvent
+        discount
+        notes
+        package
+      }
+      lastName
+      password
+      phone
+      state
+      street
+      zip
+    }
+  }
+`;
